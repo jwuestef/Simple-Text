@@ -12,12 +12,16 @@ var authToken = config.authToken;
 var client = require('twilio')(accountSid, authToken);
 
 
+
+
 function createUserToken(user) {
 	// Get the current time
 	var timestamp = new Date().getTime();
 	// Using JSON Web Token package, we encode the user's id and the issued-at timestamp, encoded/mixed with the secret.
 	return jwt.encode({sub: user.id, iat: timestamp}, config.secret);
 };
+
+
 
 
 function generateTwilioPhoneNumber(next) {
@@ -33,17 +37,17 @@ function generateTwilioPhoneNumber(next) {
 		// Pull the phone number out of the response
 		phoneNumber = data[0].phoneNumber;
 		// Purchase this number, set the smsURL so it will send a POST request to our server when the number receives a text message
-					client.incomingPhoneNumbers.create({
-						phoneNumber: phoneNumber,
-						SmsMethod: "POST",
-						smsUrl: "https://bdfb1911.ngrok.io/receiveMessage"
-					}, function(err, purchasedNumber) {
-						// purchasedNumber is the full phone number documentation, with account info and everything
-						var actualPhoneNumber = purchasedNumber.phoneNumber;
-						next(null, actualPhoneNumber);
-					});
+					// client.incomingPhoneNumbers.create({
+					// 	phoneNumber: phoneNumber,
+					// 	SmsMethod: "POST",
+					// 	smsUrl: "https://bdfb1911.ngrok.io/receiveMessage"
+					// }, function(err, purchasedNumber) {
+					// 	// purchasedNumber is the full phone number documentation, with account info and everything
+					// 	var actualPhoneNumber = purchasedNumber.phoneNumber;
+					// 	next(null, actualPhoneNumber);
+					// });
 
-		//next(err, phoneNumber);  // For skipping the actual purchase - uncomment above - I've already bought 1-224-412-3145
+		next(err, phoneNumber);  // For skipping the actual purchase - uncomment above - I've already bought 1-224-412-3145
 	});
 }
 
@@ -117,6 +121,7 @@ exports.login = function(req, res, next) {
 	// User has already had their username and password authenticated
 	// We just need to give them a token
 
-	res.send({token: createUserToken(req.user) });
+	res.send({token: createUserToken(req.user), user: req.user});
 	
 };
+

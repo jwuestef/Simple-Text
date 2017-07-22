@@ -1,0 +1,28 @@
+
+
+<div class="container">
+	<p>This is the dashboard view!</p>
+
+	<button ng-click="ctrl.logout()">Logout</button>
+
+	<label for="newContactName">Name:</label>
+	<input type="text" id="newContactName" ng-model="ctrl.newContact.contactName" placeholder="ex: Harrison Schultz">
+
+	<label for="newContactNumber">Phone Number:</label>
+	<input type="number" id="newContactNumber" ng-model="ctrl.newContact.contactNumber" placeholder="ex: 12223334444">
+
+	<button ng-click="ctrl.saveNewContact()">Save Contact</button>
+
+
+
+
+	<br>
+	<br>
+
+
+
+	<ul>
+		<li ng-repeat="contact in ctrl.contacts" ng-click="ctrl.viewContact(contact)">{{contact.contactName}} - <span>{{contact.contactNumber}}</span></li>
+	</ul>
+
+</div>

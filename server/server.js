@@ -94,7 +94,7 @@ app.post("/signup", Auth.signup);
 app.post("/login", requireLogin, Auth.login);
 app.get("/logout", function(req, res) {
 	req.logout();
-	res.send({message: "Logged out!"});
+	res.redirect("/");
 });
 
 app.get("/contacts", isAuthenticated, Contact.getContacts);
@@ -105,32 +105,6 @@ app.delete("/contacts/:contactId", isAuthenticated, Contact.deleteContact);
 
 app.post("/message/:contactId", isAuthenticated, Contact.sendMessageToUser);
 app.post("/receiveMessage", Contact.receiveMessage);
-
-
-
-
-
-// TEST CASE TO ENSURE AUTH IS WORKING - DELETE BEFORE PRODUCTION - USE ANGULAR FOR ROUTING, NOT THIS!
-app.get("/user/:id", isAuthenticated, function(req, res) {
-	res.send({message: "Mr. Meowington is successfully authenticated"});
-});
-
-// OLD OLD OLD
-// USING ANGULAR INSTEAD
-// ONLY CREATE 1 HOME, POST ROUTES IN SERVER
-
-// // Users dashboard
-// app.get("/dashboard", isAuthenticated, function(req, res) {
-// 	res.json({messageToUser: JSON.stringify(req.user)});
-// });
-// app.post("/newitem", isAuthenticated, BucketList.addBucketList);
-// app.get("/items", isAuthenticated, BucketList.fetchBucketLists);
-// app.get("/items/:id", isAuthenticated, BucketList.fetchBucketList);
-// app.put("/items/:id", isAuthenticated, BucketList.updateBucketList);
-// app.delete("/items/:id", isAuthenticated, BucketList.deleteBucketList);
-
-
-
 
 
 

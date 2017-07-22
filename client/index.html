@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="simpleTextApp">
+<html lang="en" ng-app="SimpleTextApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Simple Text</title>
@@ -9,14 +9,21 @@
 <body>
 
 	<div class="container-fluid">
-		<div ng-view></div>
+		<p>This is index.html</p>
+		<div ui-view></div>
 	</div>
 	
 	<script src="./scripts/jquery-3.2.1.js"></script>
 	<script src="./scripts/bootstrap.js"></script>
-	<script src="./scripts/angular.js"></script>
-	<script src="./scripts/angular-route.js"></script>
+	<script src="./node_modules/angular/angular.js"></script>
+	<script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="./app.js"></script>
-	<script src="./controllers/landingcontroller.js"></script>
+	<script src="./landingpage/landing.js"></script>
+	<script src="./landingpage/sessiontoken.js"></script>
+	<script src="./landingpage/users.service.js"></script>
+	<script src="./landingpage/authinterceptor.js"></script>
+	<script src="./landingpage/currentuser.js"></script>
+	<script src="./dashboard/dashboard.js"></script>
+	<script src="./messageview/messageview.js"></script>
 </body>
 </html>

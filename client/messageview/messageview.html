@@ -1,0 +1,34 @@
+<div class="container">
+
+	<p>This is the messageview HTML file!</p>
+	<button ng-click="ctrl.logout()">Logout</button>
+	<button ng-click="ctrl.returnToDashboard()">Return To Dashboard</button>
+
+
+	<label for="updateContactName">Name:</label>
+	<input type="text" id="updateContactName" value="{{ctrl.thisContactName}}">
+
+	<label for="updateContactNumber">Phone Number:</label>
+	<input type="number" id="updateContactNumber" value="{{ctrl.thisContactNumber}}">
+
+	<button ng-click="ctrl.saveUpdateContact()">Save Contact</button>
+
+	<button ng-click="ctrl.deleteContact()">Delete Contact</button>
+
+
+	<ul>
+		<li ng-repeat="message in ctrl.thisContactMessages">{{message.messageContent}}</li>
+	</ul>
+
+
+	
+	<p>Send Message To {{ctrl.thisContactName}}</p>
+	<input type="text" id="newMessageContent">
+	<button ng-click="ctrl.sendMessage()">Send!</button>
+
+
+
+</div>
+
+
+

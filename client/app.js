@@ -1,24 +1,29 @@
-// Declare the overall angular app
-var simpleTextApp = angular.module('simpleTextApp', ['ngRoute']);
+(function() {
 
 
-// This configures the routes and associates each route with a view and a controller
-simpleTextApp.config(["$routeProvider", function ($routeProvider) {
-	$routeProvider
-		// Define base route
-		.when('/', {
-			controller: 'LandingController',
-			templateUrl: '/views/landing.html'
-		})
-		// Define a route that has a route parameter in it (:userID) to load each user's dashboard (list of contacts)
-		.when('/dashboard/:userID', {
-			controller: 'DashboardController',
-			templateUrl: '/views/dashboard.html'
-		})
-		// Define a route that has a route parameter in it (:conversation) to load a particular conversation (all messages with specific contact)
-		.when('/conversation/:conversation', {
-			controller: 'ConversationController',
-			templateUrl: '/views/conversation.html'
-		})
-		.otherwise({ redirectTo: '/' });
-}]);
+// Keep only ONE functionality per file. This file will 'make' the angular app, pulling in all of our separate modules
+angular.module("SimpleTextApp", [
+	"ui.router",
+	"SimpleTextApp.landing",
+	"SimpleTextApp.dashboard",
+	"SimpleTextApp.messageview"
+])
+.config(mainConfig)
+.constant("API_BASE", "/");
+
+// Inject the angular module to allow some basic routing here
+mainConfig.$inject = ["$urlRouterProvider"];
+
+
+// If none of our other modules handle the route, direct them to the landing page.
+function mainConfig($urlRouterProvider) {
+	$urlRouterProvider.otherwise("/");
+};
+
+
+
+
+
+
+
+})();  // End of wrapper IIFE

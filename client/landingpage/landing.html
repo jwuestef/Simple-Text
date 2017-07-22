@@ -1,0 +1,43 @@
+
+<h1>Landing view!!</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-4">
+			<h3>Login</h3>
+			<form id="new_user" ng-submit="ctrl.login()">
+				<p>
+					<label for="username">Username</label><br>
+					<input type="text" name="username" ng-model="ctrl.user.username" required>
+				</p>
+				<p>
+					<label for="password">Password</label><br>
+					<input type="password" name="password" ng-model="ctrl.user.password" required>
+				</p>
+				<input type="submit" id="login" name="commit" value="Login" class="btn btn-default">
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-4">
+			<h3>Sign Up</h3>
+			<form id="new_user" ng-submit="ctrl.signup()">
+				<p>
+					<label for="username">Username</label><br>
+					<input type="text" name="username" ng-model="ctrl.user.username" required>
+				</p>
+				<p>
+					<label for="password">Password</label><br>
+					<input type="password" ng-model="ctrl.user.password" name="password"  required>
+				</p>
+				<input type="submit" id="signup" name="commit" value="Sign Up" class="btn btn-default">
+			</form>
+		</div>
+	</div>
+</div>
