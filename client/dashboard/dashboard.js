@@ -46,6 +46,8 @@ function DashboardController($state, UsersService) {
 		UsersService.saveNewContact(vm.newContact.contactName, vm.newContact.contactNumber).then(function() {
 			vm.fetchContacts();
 		});
+		vm.newContact.contactName = "";
+		vm.newContact.contactNumber = "";
 	};
 
 

@@ -1,32 +1,62 @@
-<div class="container">
-
-	<p>This is the messageview HTML file!</p>
-	<button ng-click="ctrl.logout()">Logout</button>
-	<button ng-click="ctrl.returnToDashboard()">Return To Dashboard</button>
 
 
-	<label for="updateContactName">Name:</label>
-	<input type="text" id="updateContactName" value="{{ctrl.thisContactName}}">
+<div class="container" id="MessageView">
 
-	<label for="updateContactNumber">Phone Number:</label>
-	<input type="number" id="updateContactNumber" value="{{ctrl.thisContactNumber}}">
-
-	<button ng-click="ctrl.saveUpdateContact()">Save Contact</button>
-
-	<button ng-click="ctrl.deleteContact()">Delete Contact</button>
+	<button ng-click="ctrl.logout()" id="logoutButton">Logout</button>
+	<button ng-click="ctrl.returnToDashboard()" class="pull-right">Return To Dashboard</button>
+	<br>
+	<br>
+	<br>
 
 
+	<div class="row">
+		<div class="col-sm-6">
+			<h2>Edit Contact Info:</h2>
+			<br>
+			<label for="updateContactName">Name:</label>
+			<br>
+			<input type="text" id="updateContactName" value="{{ctrl.thisContactName}}">
+			<br>
+			<br>
+			<br>
+			<label for="updateContactNumber">Phone Number:</label>
+			<br>
+			<input type="number" id="updateContactNumber" value="{{ctrl.thisContactNumber}}">
+		</div>
+		<div class="col-sm-6" id="saveContactDiv">
+			<button ng-click="ctrl.saveUpdateContact()">Save Contact</button>
+			<button ng-click="ctrl.deleteContact()">Delete Contact</button>
+		</div>
+	</div>
+
+	<br>
+	
+	<hr class="style13">
+	<hr class="style13">
+	<hr class="style13">
+
+	<br>
+	<br>
+
+	
+	<h2>Conversations:</h2>
 	<ul>
 		<li ng-repeat="message in ctrl.thisContactMessages">{{message.messageContent}}</li>
 	</ul>
 
+	<br>
+	<br>
 
 	
-	<p>Send Message To {{ctrl.thisContactName}}</p>
+	<h2>Send Message To {{ctrl.thisContactName}}</h2>
 	<input type="text" id="newMessageContent">
 	<button ng-click="ctrl.sendMessage()">Send!</button>
-
-
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 </div>
 

@@ -38,14 +38,13 @@ function LandingController($state, UsersService) {
 
 	vm.user = {};
 	vm.login = function() {
-		UsersService.login(vm.user).then(function(response){
+		UsersService.login(vm.login.user).then(function(response){
 			$state.go("dashboard");
 		});
 	};
 
 	vm.signup = function() {
-		UsersService.create(vm.user).then(function(response){
-			console.log("Response in landingConfig.js from the LandingController, where we UsersService.create: " + response);
+		UsersService.create(vm.signup.user).then(function(response){
 			$state.go("dashboard");
 		});
 	};

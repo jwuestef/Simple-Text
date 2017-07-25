@@ -1,43 +1,79 @@
 
-<h1>Landing view!!</h1>
 
-<div class="container">
+<div class="container-fluid" id="LandingFormArea">
+
 	<div class="row">
-		<div class="col-xs-6 col-xs-offset-4">
-			<h3>Login</h3>
+		<img src="css/Logo.png">
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-sm-6">
 			<form id="new_user" ng-submit="ctrl.login()">
+				<h1>Login</h1>
 				<p>
 					<label for="username">Username</label><br>
-					<input type="text" name="username" ng-model="ctrl.user.username" required>
+					<input type="text" name="username" ng-model="ctrl.login.user.username" required>
 				</p>
 				<p>
 					<label for="password">Password</label><br>
-					<input type="password" name="password" ng-model="ctrl.user.password" required>
+					<input type="password" name="password" ng-model="ctrl.login.user.password" required>
 				</p>
 				<input type="submit" id="login" name="commit" value="Login" class="btn btn-default">
 			</form>
 		</div>
-	</div>
-</div>
 
 
-
-
-<div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-xs-offset-4">
-			<h3>Sign Up</h3>
+		<div class="col-sm-6">
 			<form id="new_user" ng-submit="ctrl.signup()">
+				<h1>Sign Up</h1>
 				<p>
 					<label for="username">Username</label><br>
-					<input type="text" name="username" ng-model="ctrl.user.username" required>
+					<input type="text" name="username" ng-model="ctrl.signup.user.username" required>
 				</p>
 				<p>
 					<label for="password">Password</label><br>
-					<input type="password" ng-model="ctrl.user.password" name="password"  required>
+					<input type="password" ng-model="ctrl.signup.user.password" name="password"  required>
+				</p>
+				<p>
+					<label for="password">Re-Type Password</label><br>
+					<input type="password" ng-model="ctrl.signup.user.password" name="password"  required>
 				</p>
 				<input type="submit" id="signup" name="commit" value="Sign Up" class="btn btn-default">
 			</form>
 		</div>
-	</div>
+
+	</div>  <!-- End of row -->
+
+
+</div> <!-- End of LandingFormArea -->
+
+
+
+<hr class="style13">
+<hr class="style13">
+<hr class="style13">
+
+
+
+<div class="container-fluid" id="LandingHowItWorks">
+	
+	<h1>How It Works</h1>
+
+	<ul>
+		<li>1. Sign up - write down your username and password and keep it somewhere safe!</li>
+		<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You will automatically be sent to your "Dashboard"</li>
+		<li>2. Add a new contact to your address book, someone who has a cell phone</li>
+		<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We suggest a close family member or friend</li>
+		<li>3. Click on their name to send them a message</li>
+		<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When they respond, you'll see it appear below your message</li>
+	</ul>
+
+
+
+
+
+
 </div>
+

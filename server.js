@@ -37,7 +37,8 @@ var app = express();
 
 // DB connection
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/simpletext");
+// mongoose.connect("mongodb://localhost:27017/simpletext");
+mongoose.connect("mongodb://admin:admin@ds125053.mlab.com:25053/simpletext");
 
 // DB connection events
 	// When successfully connected
@@ -78,7 +79,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(express.static("../client"));
+app.use(express.static("./client"));
 
 
 
@@ -113,7 +114,7 @@ app.post("/receiveMessage", Contact.receiveMessage);
 // ==================================================
 
 // If there's an environment variable defined, use it. If not, use 3000.
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
 // The http library is a native node library and is used for low level http requests. This line creates a node server.
 // We can pass in our express app into the createServer function express application by passing in the app variable from above.

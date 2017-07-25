@@ -20,7 +20,7 @@ angular.module("SimpleTextApp")
 
 				userPromise.then(function(response){
 					SessionToken.set(response.data.sessionToken);
-					CurrentUser.set(response.data.user._id);
+					CurrentUser.set(response.data._id);
 				});
 				return userPromise;
 			};

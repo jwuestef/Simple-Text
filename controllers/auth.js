@@ -18,6 +18,8 @@ function createUserToken(user) {
 	// Get the current time
 	var timestamp = new Date().getTime();
 	// Using JSON Web Token package, we encode the user's id and the issued-at timestamp, encoded/mixed with the secret.
+	console.log("user we are encoding in a JWT is:");
+	console.log(user);
 	return jwt.encode({sub: user.id, iat: timestamp}, config.secret);
 };
 
@@ -88,21 +90,36 @@ exports.signup = function(req, res, next) {
 				//console.log(generatedPhoneNumber);
 
 				// Create a new user with said information
-				var newUser = new User({
+				var newUser = {
 					username: username,
 					password: password,
 					phoneNumber: generatedPhoneNumber
-				});
-
+				};
 
 				// Saves the new user to the database
-				newUser.save(function(err) {
+				User.create(newUser, function(err, savedNewUser) {
 					if(err) {
 						return next(err);
 					};
+
 					// User successfully created - return a valid JWT created with our function above
-					res.json({token: createUserToken(newUser)});
+					// First find our new user so we can pass the ID back through the response too
+					var idToSaveToLocalStorage = savedNewUser._id.valueOf();
+					User.findOne({username: savedNewUser.username.toLowerCase()}, function(err, foundCreatedUser) {
+						if(err) {
+							return next(err);
+						};
+						// console.log("foundCreatedUser is:");
+						// console.log(foundCreatedUser);
+						res.json({token: createUserToken(foundCreatedUser), _id: idToSaveToLocalStorage});
+					});
+
 				});
+
+
+
+
+
 			};
 
 		});
@@ -120,7 +137,6 @@ exports.login = function(req, res, next) {
 
 	// User has already had their username and password authenticated
 	// We just need to give them a token
-
 	res.send({token: createUserToken(req.user), user: req.user});
 	
 };

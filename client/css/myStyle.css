@@ -1,0 +1,288 @@
+html {
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background: -webkit-linear-gradient( to right top, skyblue, white);
+    background: -moz-linear-gradient( to right top, skyblue, white);
+    background: -ms-linear-gradient( to right top, skyblue, white);
+    background: -o-linear-gradient( to right top, skyblue, white);
+    background: linear-gradient( to right top, skyblue, white);
+}
+
+
+body {
+	background-color: inherit;
+}
+
+
+#LandingFormArea {
+	margin: 5rem auto;
+	padding: 5rem;
+	padding-top: 0;
+	margin-top: 0;	
+}
+
+
+#LandingFormArea div {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+
+#LandingFormArea form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+#LandingFormArea h1 {
+	text-align: center;
+	font-size: 7.5rem;
+	margin-bottom: 4rem;
+}
+
+
+#LandingFormArea label {
+	font-size: 3rem;
+}
+
+
+#LandingFormArea input {
+	font-size: 3rem;
+	padding: 1rem;
+	margin-bottom: 3rem;
+}
+
+
+#LandingFormArea input[type="submit"] {
+	margin-top: 3rem;
+	padding: 3rem;
+	border-radius: 15px;
+	background-color: #aaa;
+}
+
+
+#LandingFormArea input[type="submit"]:hover {
+	background-color: #888;
+}
+
+
+#LandingFormArea img {
+	height: 40rem;
+	width: auto;
+}
+
+
+hr.style13 {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px blue inset;
+}
+
+
+#LandingHowItWorks h1 {
+	font-size: 7.5rem;
+	text-align: center;
+}
+
+
+#LandingHowItWorks ul {
+	list-style: none;
+	font-size: 3rem;
+	margin: 7.5rem;
+	padding-left: 10%;
+}
+
+
+#LandingHowItWorks li:nth-of-type(2n) {
+	margin-bottom: 4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#DashboardView h2 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+
+#DashboardView label {
+	font-size: 3rem;
+}
+
+
+#DashboardView input {
+	font-size: 3rem;
+	padding: 1rem;
+	margin-bottom: 3rem;
+	width: 100%;
+}
+
+
+#DashboardView button {
+	font-size: 3rem;
+	margin-top: 3rem;
+	padding: 3rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-radius: 15px;
+	background-color: #aaa;
+}
+
+
+#DashboardView button:hover {
+	background-color: #888;
+}
+
+
+#logoutButton {
+	margin-bottom: 5rem;
+}
+
+
+#DashboardView div.row {
+	display: flex;
+}
+
+
+#DashboardView div.row div.col-sm-6:nth-of-type(2) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#saveContactDiv button {
+	padding: 3rem 4.5rem;
+}
+
+
+#DashboardView ul {
+	list-style: none;
+}
+
+
+#DashboardView li {
+	font-size: 3rem;
+	padding: 2rem 1rem;
+	background-color: #aaa;
+	border-radius: 15px;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	user-select: none;
+}
+
+#DashboardView li:hover {
+	cursor: pointer;
+	background-color: #888;
+}
+
+
+
+
+
+
+
+
+
+#MessageView button {
+	font-size: 3rem;
+	margin-top: 3rem;
+	padding: 3rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-radius: 15px;
+	background-color: #aaa;
+}
+
+
+#MessageView button:hover {
+	background-color: #888;
+}
+
+
+#MessageView h2 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+
+#MessageView label {
+	font-size: 3rem;
+}
+
+
+#MessageView input {
+	font-size: 3rem;
+	padding: 1rem;
+	margin-bottom: 3rem;
+	width: 100%;
+}
+
+
+#MessageView button {
+	font-size: 3rem;
+	margin-top: 3rem;
+	padding: 3rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-radius: 15px;
+	background-color: #aaa;
+}
+
+
+#MessageView button:hover {
+	background-color: #888;
+}
+
+#MessageView div.row {
+	display: flex;
+}
+
+
+#MessageView div.row div.col-sm-6:nth-of-type(2) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#saveContactDiv button {
+	padding: 3rem 4.5rem;
+	margin: 2rem;
+}
+
+
+#MessageView ul {
+	list-style: none;
+}
+
+
+#MessageView li {
+	font-size: 3rem;
+	padding: 2rem 1rem;
+	background-color: white;
+	border: 3px solid black;
+	border-radius: 15px;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	user-select: none;
+}
