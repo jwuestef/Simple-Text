@@ -42,7 +42,7 @@ function generateTwilioPhoneNumber(next) {
 					// client.incomingPhoneNumbers.create({
 					// 	phoneNumber: phoneNumber,
 					// 	SmsMethod: "POST",
-					// 	smsUrl: "https://bdfb1911.ngrok.io/receiveMessage"
+					// 	smsUrl: "https://simple-text.herokuapp.com/receiveMessage"
 					// }, function(err, purchasedNumber) {
 					// 	// purchasedNumber is the full phone number documentation, with account info and everything
 					// 	var actualPhoneNumber = purchasedNumber.phoneNumber;
