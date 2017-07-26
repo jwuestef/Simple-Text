@@ -18,8 +18,6 @@ function createUserToken(user) {
 	// Get the current time
 	var timestamp = new Date().getTime();
 	// Using JSON Web Token package, we encode the user's id and the issued-at timestamp, encoded/mixed with the secret.
-	console.log("user we are encoding in a JWT is:");
-	console.log(user);
 	return jwt.encode({sub: user.id, iat: timestamp}, config.secret);
 };
 
@@ -27,7 +25,6 @@ function createUserToken(user) {
 
 
 function generateTwilioPhoneNumber(next) {
-	console.log("generateTwilioPhoneNumber() function called");
 
 	// Initialize blank variable
 	var phoneNumber = "";
@@ -109,8 +106,7 @@ exports.signup = function(req, res, next) {
 						if(err) {
 							return next(err);
 						};
-						// console.log("foundCreatedUser is:");
-						// console.log(foundCreatedUser);
+						// Send back a token and the user's id
 						res.json({token: createUserToken(foundCreatedUser), _id: idToSaveToLocalStorage});
 					});
 
